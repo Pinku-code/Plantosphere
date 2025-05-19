@@ -1,0 +1,79 @@
+// --- FILE: src/pages/Products.jsx ---
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const products = [
+  {
+    name: "Ice Apple Juice",
+    category: "Food Products",
+    price: "₹120",
+    image: "/images/ice-apple.jpg",
+    ingredients: "Ice Apple, Lemon, Cane Sugar",
+    benefits: "Hydrating, Rich in nutrients",
+    packaging: "250ml glass bottle",
+  },
+  {
+    name: "Multigrain Atta",
+    category: "Food Products",
+    price: "₹90",
+    image: "/images/multigrain.jpg",
+    ingredients: "Wheat, Jowar, Bajra, Ragi, Barley",
+    benefits: "High in fiber, Good for digestion",
+    packaging: "1kg eco-pack",
+  },
+  {
+    name: "Darjeeling Tea",
+    category: "Tea",
+    price: "₹200",
+    image: "/images/tea.jpg",
+    ingredients: "Darjeeling loose-leaf",
+    benefits: "Antioxidant-rich, Refreshing",
+    packaging: "100g pouch",
+  },
+  {
+    name: "Organic Turmeric",
+    category: "Spices",
+    price: "₹60",
+    image: "/images/turmeric.jpg",
+    ingredients: "Dried turmeric root",
+    benefits: "Anti-inflammatory, Immunity booster",
+    packaging: "200g packet",
+  },
+  {
+    name: "Chili Powder",
+    category: "Spices",
+    price: "₹50",
+    image: "/images/chili.jpg",
+    ingredients: "Sun-dried red chili",
+    benefits: "Spicy, Adds flavor",
+    packaging: "100g packet",
+  },
+];
+
+export default function Products() {
+  return (
+    <>
+      <Header />
+      <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
+        <h2 className="text-3xl font-bold text-center mb-10">Our Products</h2>
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+          {products.map((product, i) => (
+            <div key={i} className="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
+              <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded" />
+              <div className="mt-4">
+                <h3 className="font-bold text-lg">{product.name}</h3>
+                <p className="text-sm text-gray-500 mb-1">{product.category}</p>
+                <p className="text-green-700 font-semibold">{product.price}</p>
+                <p className="text-sm mt-2"><strong>Ingredients:</strong> {product.ingredients}</p>
+                <p className="text-sm"><strong>Benefits:</strong> {product.benefits}</p>
+                <p className="text-sm mb-2"><strong>Packaging:</strong> {product.packaging}</p>
+                <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Enquire Now</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+}

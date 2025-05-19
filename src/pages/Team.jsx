@@ -1,0 +1,59 @@
+// --- FILE: src/pages/Team.jsx ---
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const teamMembers = [
+  {
+    name: "Dr. A. Sharma",
+    role: "Founder & Agri-Innovation Lead",
+    image: "/images/team/dr-sharma.jpg",
+    bio: "PhD in Horticulture with 15+ years of experience in agri-research and startup incubation. Leads our strategic partnerships and research direction.",
+  },
+  {
+    name: "Ms. R. Verma",
+    role: "Operations & Outreach",
+    image: "/images/team/riya-verma.jpg",
+    bio: "Manages incubation programs, startup support, and outreach initiatives across academia and industry stakeholders.",
+  },
+  {
+    name: "Mr. K. Mehra",
+    role: "Technical Advisor",
+    image: "/images/team/k-mehra.jpg",
+    bio: "Software architect with expertise in building scalable agri-tech solutions. Guides technical infrastructure and digital product strategy.",
+  },
+  {
+    name: "You",
+    role: "Frontend Developer (Hackathon)",
+    image: "/images/team/default-avatar.png",
+    bio: "Built Plantosphere's responsive frontend during the Smart India Hackathon 2025. Passionate about open-source, design, and agri-innovation.",
+  },
+];
+
+export default function Team() {
+  return (
+    <>
+      <Header />
+      <section className="py-16 px-6 max-w-6xl mx-auto mt-14">
+        <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition"
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
+              />
+              <h4 className="text-xl font-semibold">{member.name}</h4>
+              <p className="text-sm text-indigo-600 font-medium">{member.role}</p>
+              <p className="mt-2 text-gray-600 text-sm">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+}
