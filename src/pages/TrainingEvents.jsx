@@ -1,6 +1,8 @@
 // --- FILE: src/pages/TrainingEvents.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FarmImage from "../assets/Farm.jpg";
+import SpiceImage from "../assets/Spice.jpg";
 
 const upcoming = [
   {
@@ -20,12 +22,12 @@ const upcoming = [
 const past = [
   {
     title: "Farm to Market Workshop",
-    image: "/images/event1.jpg",
+    image: FarmImage,
     feedback: "Very informative session with live demos."
   },
   {
     title: "Spice Export Seminar",
-    image: "/images/event2.jpg",
+    image: SpiceImage,
     feedback: "Excellent speakers and networking."
   }
 ];

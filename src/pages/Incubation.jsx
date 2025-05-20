@@ -1,6 +1,7 @@
 // --- FILE: src/pages/Incubation.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CISHLogo from "../assets/CISH.png";
 
 export default function Incubation() {
   return (
@@ -17,7 +18,7 @@ export default function Incubation() {
 
       <section className="py-12 px-6 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src="/images/cish-logo.png" alt="CISH Logo" className="w-64 mx-auto" />
+          <img src={CISHLogo} alt="CISH Logo" className="w-64 mx-auto" />
           <div>
             <h3 className="text-2xl font-semibold mb-2">Our Incubation Partner</h3>
             <p className="text-gray-700">

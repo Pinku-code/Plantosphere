@@ -72,7 +72,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[90%] max-w-7xl z-50 rounded-2xl backdrop-blur bg-white/80 dark:bg-gray-900/70 shadow-lg transition-all p-2">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[90%] max-w-7xl z-50 rounded-2xl backdrop-blur bg-white/80 dark:bg-gray-900/70 shadow-lg transition-all p-1">
       <div className="flex justify-between items-center px-4 py-3">
         <Link
           to="/"

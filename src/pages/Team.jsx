@@ -1,30 +1,34 @@
 // --- FILE: src/pages/Team.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ASharma from "../assets/ASharma.jpg";
+import RVerma from "../assets/RiyaVerma.jpg";
+import KMehra from "../assets/KMehra.jpg";
+import Frontend from "../assets/Frontend.jpg";
 
 const teamMembers = [
   {
     name: "Dr. A. Sharma",
     role: "Founder & Agri-Innovation Lead",
-    image: "/images/team/dr-sharma.jpg",
+    image: ASharma,
     bio: "PhD in Horticulture with 15+ years of experience in agri-research and startup incubation. Leads our strategic partnerships and research direction.",
   },
   {
     name: "Ms. R. Verma",
     role: "Operations & Outreach",
-    image: "/images/team/riya-verma.jpg",
+    image: RVerma,
     bio: "Manages incubation programs, startup support, and outreach initiatives across academia and industry stakeholders.",
   },
   {
     name: "Mr. K. Mehra",
     role: "Technical Advisor",
-    image: "/images/team/k-mehra.jpg",
+    image: KMehra,
     bio: "Software architect with expertise in building scalable agri-tech solutions. Guides technical infrastructure and digital product strategy.",
   },
   {
-    name: "You",
-    role: "Frontend Developer (Hackathon)",
-    image: "/images/team/default-avatar.png",
+    name: "John",
+    role: "Frontend Developer",
+    image: Frontend,
     bio: "Built Plantosphere's responsive frontend during the Smart India Hackathon 2025. Passionate about open-source, design, and agri-innovation.",
   },
 ];

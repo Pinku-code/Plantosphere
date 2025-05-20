@@ -1,6 +1,9 @@
 // --- FILE: src/pages/Blog.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FarmingTechnique from "../assets/FarmingTechnique.jpg";
+import FarmerSuccess from "../assets/Farmer.jpg";
+import ExportSpices from "../assets/SpiceExport.jpg";
 
 const articles = [
   {
@@ -8,21 +11,21 @@ const articles = [
     summary: "Explore modern and sustainable practices improving soil health and productivity.",
     author: "Dr. R. Kumar",
     date: "April 10, 2025",
-    image: "/images/blog1.jpg",
+    image: FarmingTechnique,
   },
   {
     title: "Farmer Success: The Mangopreneur of UP",
     summary: "How one farmer scaled mango exports through innovation.",
     author: "Meera Sharma",
     date: "March 21, 2025",
-    image: "/images/blog2.jpg",
+    image: FarmerSuccess,
   },
   {
     title: "Exporting Spices: What You Need to Know",
     summary: "Regulations and tips for taking Indian spices global.",
     author: "Export India",
     date: "February 28, 2025",
-    image: "/images/blog3.jpg",
+    image: ExportSpices,
   },
 ];
 
