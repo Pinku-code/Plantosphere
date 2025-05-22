@@ -24,18 +24,93 @@
 
 
 
+// import { motion } from "framer-motion";
+// import TeaImage from "../assets/tea.jpg";
+
+// export default function HeroSection() {
+//   return (
+//     <section
+//       className="relative h-[90vh] bg-center bg-no-repeat bg-cover overflow-hidden m-1.5 rounded-xl shadow-lg"
+//       style={{ backgroundImage: `url(${TeaImage})` }}
+//     >
+//       {/* Overlay */}
+//       {/* <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div> */}
+
+//       {/* Animated Content */}
+//       <div className="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
+//         <motion.h1
+//           initial={{ opacity: 0, y: 30 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8 }}
+//           className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-md"
+//         >
+//           Innovating Food, <br className="hidden sm:block" />
+//           Empowering Farmers
+//         </motion.h1>
+
+//         <motion.p
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ delay: 0.5, duration: 0.8 }}
+//           className="mt-6 text-lg md:text-2xl text-gray-200 max-w-2xl"
+//         >
+//           Transforming agriculture through innovation, sustainability, and technology.
+//         </motion.p>
+
+//         <motion.a
+//           href="#"
+//           initial={{ opacity: 0, scale: 0.9 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ delay: 1, duration: 0.5 }}
+//           className="mt-8 inline-block px-8 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow-lg hover:bg-green-100 transition duration-300"
+//         >
+//           Explore Our Work
+//         </motion.a>
+//       </div>
+
+//       {/* Decorative Floating Elements */}
+//       <motion.div
+//         className="absolute top-10 left-10 w-16 h-16 bg-green-400 rounded-full opacity-30 blur-xl"
+//         animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
+//         transition={{ repeat: Infinity, duration: 6 }}
+//       />
+//       <motion.div
+//         className="absolute bottom-10 right-10 w-20 h-20 bg-green-600 rounded-full opacity-30 blur-xl"
+//         animate={{ y: [0, 25, 0], x: [0, -25, 0] }}
+//         transition={{ repeat: Infinity, duration: 8 }}
+//       />
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { motion } from "framer-motion";
-import TeaImage from "../assets/tea.jpg";
+import HeroImage from "../assets/tea.jpg"; // Replace with actual image path
 
 export default function HeroSection() {
   return (
     <section
       className="relative h-[90vh] bg-center bg-no-repeat bg-cover overflow-hidden m-1.5 rounded-xl shadow-lg"
-      style={{ backgroundImage: `url(${TeaImage})` }}
+      style={{ backgroundImage: `url(${HeroImage})` }}
     >
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div> */}
-
       {/* Animated Content */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
         <motion.h1
@@ -44,8 +119,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-md"
         >
-          Innovating Food, <br className="hidden sm:block" />
-          Empowering Farmers
+          Innovating Agriculture, <br className="hidden sm:block" />
+          Empowering Communities
         </motion.h1>
 
         <motion.p
@@ -54,18 +129,49 @@ export default function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-6 text-lg md:text-2xl text-gray-200 max-w-2xl"
         >
-          Transforming agriculture through innovation, sustainability, and technology.
+          Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions through
+          cutting-edge products, training, and research.
         </motion.p>
 
-        <motion.a
-          href="#"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="mt-8 inline-block px-8 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow-lg hover:bg-green-100 transition duration-300"
-        >
-          Explore Our Work
-        </motion.a>
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <motion.a
+            href="#services"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
+          >
+            Explore Our Solutions
+          </motion.a>
+          <motion.a
+            href="#products"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
+          >
+            Shop Our Products
+          </motion.a>
+          <motion.a
+            href="#training"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
+            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
+          >
+            Join Our Training
+          </motion.a>
+          <motion.a
+            href="#journal"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.6, duration: 0.5 }}
+            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
+          >
+            Submit to Our Journal
+          </motion.a>
+        </div>
       </div>
 
       {/* Decorative Floating Elements */}

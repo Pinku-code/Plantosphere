@@ -37,9 +37,29 @@
 
 
 
-// Header.jsx
-import { useState } from "react";
-import { Link } from "react-router-dom";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -52,37 +72,53 @@ import { Menu, Transition } from "@headlessui/react";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-
-  const toggleMobile = () => setMobileOpen(!mobileOpen);
-  const toggleDark = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const location = useLocation();
 
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
     { to: "/products", label: "Products" },
     { to: "/services", label: "Services" },
-    { to: "/training", label: "Training & Events" },
+    { to: "/training", label: "Training & Courses" },
+    { to: "/journal", label: "Journal" },
     { to: "/blog", label: "Blog" },
-    { to: "/incubation", label: "Incubation" },
+    { to: "/case-studies", label: "Case Studies" },
     { to: "/team", label: "Team" },
+    { to: "/collaborate", label: "Collaborate" },
     { to: "/contact", label: "Contact" },
   ];
+
+  // Auto-close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  // Handle theme toggle
+  const toggleDark = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", !darkMode ? "dark" : "light");
+  };
+
+  // On first render, check user's theme preference
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
   return (
     <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[90%] max-w-7xl z-50 rounded-2xl backdrop-blur bg-white/80 dark:bg-gray-900/70 shadow-lg transition-all p-1">
       <div className="flex justify-between items-center px-4 py-3">
-        <Link
-          to="/"
-          className="text-2xl font-bold text-green-600 dark:text-green-400"
-        >
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-green-600 dark:text-green-400">
           Plantosphere
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-gray-700 dark:text-gray-200">
           {navItems.map(({ to, label }) => (
             <Link
               key={to}
@@ -94,7 +130,10 @@ export default function Header() {
           ))}
 
           {/* Theme Toggle */}
-          <button onClick={toggleDark} className="ml-4">
+          <button
+            onClick={toggleDark}
+            className="ml-4 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
             {darkMode ? (
               <SunIcon className="h-5 w-5 text-yellow-400" />
             ) : (
@@ -102,8 +141,8 @@ export default function Header() {
             )}
           </button>
 
-          {/* Avatar Menu */}
-          <Menu as="div" className="relative ml-4">
+          {/* Profile Menu */}
+          {/* <Menu as="div" className="relative ml-3">
             <Menu.Button className="focus:outline-none">
               <UserCircleIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
             </Menu.Button>
@@ -144,11 +183,11 @@ export default function Header() {
                 </div>
               </Menu.Items>
             </Transition>
-          </Menu>
+          </Menu> */}
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-3">
           <button onClick={toggleDark}>
             {darkMode ? (
               <SunIcon className="h-5 w-5 text-yellow-400" />
@@ -156,7 +195,7 @@ export default function Header() {
               <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
             )}
           </button>
-          <button onClick={toggleMobile}>
+          <button onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? (
               <XMarkIcon className="h-6 w-6 text-gray-700 dark:text-gray-200" />
             ) : (
@@ -166,14 +205,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Nav Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 rounded-b-2xl px-4 pb-4 space-y-2">
+        <div className="md:hidden bg-white dark:bg-gray-900 rounded-b-2xl px-4 pb-4 space-y-2 text-sm font-medium">
           {navItems.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
-              onClick={() => setMobileOpen(false)}
               className="block text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 transition"
             >
               {label}
@@ -182,15 +220,13 @@ export default function Header() {
           <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
             <Link
               to="/profile"
-              className="block text-sm text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 transition"
-              onClick={() => setMobileOpen(false)}
+              className="block text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 transition"
             >
               Profile
             </Link>
             <Link
               to="/logout"
-              className="block text-sm text-red-600 dark:text-red-400 hover:underline"
-              onClick={() => setMobileOpen(false)}
+              className="block text-red-600 dark:text-red-400 hover:underline"
             >
               Logout
             </Link>

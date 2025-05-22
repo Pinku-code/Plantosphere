@@ -6,6 +6,9 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Training from "./pages/TrainingEvents";	
 import Blog from "./pages/Blog";
+import Journal from "./pages/Journal";
+import CaseStudiesPage from "./pages/CaseStudies";
+import CollaboratePage from "./pages/Collaborate";
 import Incubation from "./pages/Incubation";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -20,7 +23,9 @@ export default function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/training" element={<Training />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/incubation" element={<Incubation />} />
+      <Route path="/journal" element={<Journal />} />
+      <Route path="/case-studies" element={<CaseStudiesPage />} />
+      <Route path="/collaborate" element={<CollaboratePage />} />
       <Route path="/team" element={<Team />} />
       <Route path="/contact" element={<Contact />} />
       {/* Add more routes as pages are created */}

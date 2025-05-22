@@ -1,73 +1,54 @@
-// export default function Footer() {
-//   return (
-//     <footer className="bg-green-700 text-white mt-12">
-//       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-//         <div>
-//           <h4 className="font-bold text-lg mb-2">Plantosphere</h4>
-//           <p className="text-sm">Empowering farmers with innovation in food processing, training, and consultancy.</p>
-//         </div>
-//         <div>
-//           <h4 className="font-bold text-lg mb-2">Quick Links</h4>
-//           <ul className="text-sm space-y-1">
-//             <li><a href="/about">About Us</a></li>
-//             <li><a href="/products">Products</a></li>
-//             <li><a href="/services">Services</a></li>
-//             <li><a href="/contact">Contact</a></li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h4 className="font-bold text-lg mb-2">Connect With Us</h4>
-//           <p className="text-sm">Email: info@plantosphere.in</p>
-//           <p className="text-sm">Phone: +91-XXXXXXXXXX</p>
-//           <div className="flex gap-4 mt-2">
-//             <a href="#"><img src="/icons/facebook.svg" alt="fb" className="h-5" /></a>
-//             <a href="#"><img src="/icons/instagram.svg" alt="ig" className="h-5" /></a>
-//             <a href="#"><img src="/icons/linkedin.svg" alt="li" className="h-5" /></a>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="bg-green-800 text-center py-3 text-xs">&copy; 2025 Plantosphere. All rights reserved.</div>
-//     </footer>
-//   );
-// }
+// 
 
 
-
-
-
-
-
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-700 text-white mt-12">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <footer className="bg-green-700 text-white mt-12 text-sm">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Company Info */}
         <div>
-          <h4 className="font-bold text-lg mb-2">Plantosphere</h4>
-          <p className="text-sm">Empowering farmers with innovation in food processing, training, and consultancy.</p>
+          <h4 className="text-lg font-bold mb-2">Plantosphere Pvt. Ltd.</h4>
+          <p>
+            Empowering communities through sustainable agriculture, food innovation, and carbon consulting.
+          </p>
+          <p className="mt-2">CIN: [Insert CIN]</p>
         </div>
+
+        {/* Quick Links */}
         <div>
-          <h4 className="font-bold text-lg mb-2">Quick Links</h4>
-          <ul className="text-sm space-y-1">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
+          <h4 className="text-lg font-bold mb-2">Quick Links</h4>
+          <ul className="space-y-1">
+            <li><a href="/" className="hover:underline">Home</a></li>
+            <li><a href="/about" className="hover:underline">About</a></li>
+            <li><a href="/services" className="hover:underline">Services</a></li>
+            <li><a href="/products" className="hover:underline">Products</a></li>
+            <li><a href="/training" className="hover:underline">Training</a></li>
+            <li><a href="/journal" className="hover:underline">Journal</a></li>
+            <li><a href="/case-studies" className="hover:underline">Case Studies</a></li>
+            <li><a href="/contact" className="hover:underline">Contact</a></li>
           </ul>
         </div>
+
+        {/* Contact & Social */}
         <div>
-          <h4 className="font-bold text-lg mb-2">Connect With Us</h4>
-          <p className="text-sm">Email: info@plantosphere.in</p>
-          <p className="text-sm">Phone: +91-XXXXXXXXXX</p>
-          <div className="flex gap-4 mt-2 text-white text-xl">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
+          <h4 className="text-lg font-bold mb-2">Connect With Us</h4>
+          <p>Email: <a href="mailto:connect@plantosphere.in" className="underline">connect@plantosphere.in</a></p>
+          <p>Phone: +91-XXXXXXXXXX</p>
+          <div className="flex gap-4 mt-3 text-xl">
+            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="#" aria-label="Instagram"><FaInstagram /></a>
+            <a href="#" aria-label="YouTube"><FaYoutube /></a>
+            <a href="#" aria-label="X"><FaXTwitter /></a>
           </div>
         </div>
       </div>
-      <div className="bg-green-800 text-center py-3 text-xs">&copy; 2025 Plantosphere. All rights reserved.</div>
+
+      {/* Bottom Bar */}
+      <div className="bg-green-800 text-center py-3 text-xs">
+        &copy; 2025 Plantosphere Pvt. Ltd. All Rights Reserved.
+      </div>
     </footer>
   );
 }

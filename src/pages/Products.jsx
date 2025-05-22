@@ -1,3 +1,12 @@
+// 
+
+
+
+
+
+
+
+
 // --- FILE: src/pages/Products.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -6,7 +15,6 @@ import Atta from "../assets/Atta.jpg";
 import Tea from "../assets/DarjlingTea.jpg";
 import Turmeric from "../assets/Turmeric.jpg";
 import Chili from "../assets/Chilli.jpg";
-
 
 const products = [
   {
@@ -61,19 +69,41 @@ export default function Products() {
     <>
       <Header />
       <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
-        <h2 className="text-3xl font-bold text-center mb-10">Our Products</h2>
+        <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
+          Sustainable, Healthy, and Innovative
+        </h2>
+        <p className="text-center text-lg text-gray-600 mb-12">
+          Shop our agri-food, wellness, and gardening products online.
+        </p>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
           {products.map((product, i) => (
-            <div key={i} className="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
-              <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded" />
+            <div
+              key={i}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 border border-green-100"
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-48 object-cover rounded"
+              />
               <div className="mt-4">
-                <h3 className="font-bold text-lg">{product.name}</h3>
+                <h3 className="font-bold text-xl text-green-800">
+                  {product.name}
+                </h3>
                 <p className="text-sm text-gray-500 mb-1">{product.category}</p>
                 <p className="text-green-700 font-semibold">{product.price}</p>
-                <p className="text-sm mt-2"><strong>Ingredients:</strong> {product.ingredients}</p>
-                <p className="text-sm"><strong>Benefits:</strong> {product.benefits}</p>
-                <p className="text-sm mb-2"><strong>Packaging:</strong> {product.packaging}</p>
-                <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Enquire Now</button>
+                <p className="text-sm mt-2">
+                  <strong>Ingredients:</strong> {product.ingredients}
+                </p>
+                <p className="text-sm">
+                  <strong>Benefits:</strong> {product.benefits}
+                </p>
+                <p className="text-sm mb-2">
+                  <strong>Packaging:</strong> {product.packaging}
+                </p>
+                <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+                  Shop Now
+                </button>
               </div>
             </div>
           ))}
