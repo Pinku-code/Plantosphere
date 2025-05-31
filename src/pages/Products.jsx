@@ -16,6 +16,9 @@ import Tea from "../assets/DarjlingTea.jpg";
 import Turmeric from "../assets/Turmeric.jpg";
 import Chili from "../assets/Chilli.jpg";
 
+
+import { Helmet } from "react-helmet";
+
 const products = [
   {
     name: "Ice Apple Juice",
@@ -68,6 +71,9 @@ export default function Products() {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>Products | Plantosphere</title>
+      </Helmet>
       <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
         <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
           Sustainable, Healthy, and Innovative
