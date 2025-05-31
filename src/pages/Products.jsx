@@ -179,7 +179,7 @@ export default function Products() {
             <Link key={product.id} to={`/products/${product.id}`}>
               <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 border border-green-100">
                 <img
-                  src={product.image}
+                  src={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
                   alt={product.name}
                   className="w-full h-48 object-cover rounded"
                 />
