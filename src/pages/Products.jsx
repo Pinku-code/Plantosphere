@@ -167,7 +167,7 @@ export default function Products() {
       <Helmet>
         <title>Products | Plantosphere</title>
         <meta property="og:title" content="Products | Plantosphere" />
-        <meta property="og:url" content="https://plantosphere.vercel.app/products" />
+        {/* <meta property="og:url" content="https://plantosphere.vercel.app/products" /> */}
       </Helmet>
       <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
         <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
@@ -181,7 +181,7 @@ export default function Products() {
             <Link key={product.id} to={`/products/${product.id}`}>
               <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 border border-green-100">
                 <img
-                  src={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
+                  src={product.image}
                   alt={product.name}
                   className="w-full h-48 object-cover rounded"
                 />

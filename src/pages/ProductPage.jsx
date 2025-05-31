@@ -21,7 +21,7 @@ export default function ProductPage() {
       <section className="py-16 px-6 max-w-4xl mx-auto mt-14">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <img
-            src={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
+            src={product.image}
             alt={product.name}
             className="w-full h-80 object-cover rounded"
           />
@@ -46,7 +46,7 @@ export default function ProductPage() {
               data-item-price={product.price}
               data-item-url={`https://plantosphere.vercel.app/`}
               data-item-description={product.benefits}
-              data-item-image={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
+              data-item-image={product.image}
             >
               Add to Cart
             </button>
