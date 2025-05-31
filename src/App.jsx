@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import ProductPage from "./pages/ProductPage";
 import Services from "./pages/Services";
 import Training from "./pages/TrainingEvents";	
 import Blog from "./pages/Blog";
@@ -19,7 +20,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      {/* <Route path="/products" element={<Products />} /> */}
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<ProductPage />} />
       <Route path="/services" element={<Services />} />
       <Route path="/training" element={<Training />} />
       <Route path="/blog" element={<Blog />} />
