@@ -101,8 +101,19 @@ export default function Products() {
                 <p className="text-sm mb-2">
                   <strong>Packaging:</strong> {product.packaging}
                 </p>
-                <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+                {/* <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
                   Shop Now
+                </button> */}
+                <button
+                  className="snipcart-add-item mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+                  data-item-id={i}
+                  data-item-name={product.name}
+                  data-item-price={product.price.replace("₹", "")}
+                  data-item-url="https://plantosphere.vercel.app/products"
+                  data-item-description={product.benefits}
+                  data-item-image={product.image}
+                >
+                  Add to Cart
                 </button>
               </div>
             </div>

@@ -128,6 +128,9 @@ export default function Header() {
               {label}
             </Link>
           ))}
+          <button className="snipcart-checkout text-white bg-green-600 px-4 py-2 rounded hover:bg-green-700">
+          🛒 Cart
+        </button>
 
           {/* Theme Toggle */}
           <button
