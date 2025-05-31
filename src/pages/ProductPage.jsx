@@ -21,7 +21,7 @@ export default function ProductPage() {
       <section className="py-16 px-6 max-w-4xl mx-auto mt-14">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <img
-            src={product.image}
+            src={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
             alt={product.name}
             className="w-full h-80 object-cover rounded"
           />
@@ -43,7 +43,7 @@ export default function ProductPage() {
               className="snipcart-add-item w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
               data-item-id={product.id}
               data-item-name={product.name}
-              data-item-price={product.price.replace("₹", "")}
+              data-item-price={120}
               data-item-url={`https://plantosphere.vercel.app/products/${product.id}`}
               data-item-description={product.benefits}
               data-item-image={product.image}
