@@ -41,7 +41,7 @@ export default function ProductPage() {
             </p>
             <button
               className="snipcart-add-item w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
-              data-item-id={product.id.toString()}
+              data-item-id={`product-id-1`}
               data-item-name={product.name}
               data-item-price={product.price}
               data-item-url={`https://plantosphere.vercel.app/`}
