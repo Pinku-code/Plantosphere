@@ -9,7 +9,7 @@ export const products = [
     id: "ice-apple-juice",
     name: "Ice Apple Juice",
     category: "Food Products",
-    price: "₹120",
+    price: "120",
     image: AppleJuice,
     ingredients: "Ice Apple, Lemon, Cane Sugar",
     benefits: "Hydrating, Rich in nutrients",
