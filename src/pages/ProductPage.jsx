@@ -44,7 +44,7 @@ export default function ProductPage() {
               data-item-id={product.id}
               data-item-name={product.name}
               data-item-price={product.price}
-              data-item-url={`https://plantosphere.vercel.app/products/${product.id}`}
+              data-item-url={`https://plantosphere.vercel.app/`}
               data-item-description={product.benefits}
               data-item-image={`https://www.shutterstock.com/image-photo/red-apple-cut-half-water-260nw-2532255795.jpg`}
             >
