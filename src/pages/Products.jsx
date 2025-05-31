@@ -166,6 +166,8 @@ export default function Products() {
       <Header />
       <Helmet>
         <title>Products | Plantosphere</title>
+        <meta property="og:title" content="Products | Plantosphere" />
+        <meta property="og:url" content="https://plantosphere.vercel.app/products" />
       </Helmet>
       <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
         <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
