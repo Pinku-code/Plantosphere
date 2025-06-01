@@ -27,11 +27,11 @@ const CaseStudiesPage = () => {
   return (
     <>
     <Header />
-    <div className="bg-white text-gray-800 mt-14">
+    <div className="bg-white dark:bg-black text-gray-800 dark:text-gray-200 mt-14">
       {/* Header */}
-      <div className="bg-white py-12 text-center">
-        <h1 className="text-4xl font-bold text-green-800">Case Studies</h1>
-        <p className="text-lg mt-2 text-green-700">
+      <div className="bg-white dark:bg-black py-12 text-center">
+        <h1 className="text-4xl font-bold text-green-800 dark:text-green-500">Case Studies</h1>
+        <p className="text-lg mt-2 text-green-700 dark:text-gray-200">
           Transforming Lives, One Project at a Time
         </p>
       </div>
@@ -42,7 +42,7 @@ const CaseStudiesPage = () => {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+              className="bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
             >
               <img
                 src={study.image}
@@ -50,8 +50,8 @@ const CaseStudiesPage = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-green-800">{study.title}</h3>
-                <p className="mt-2 text-gray-700">{study.outcome}</p>
+                <h3 className="text-xl font-semibold text-green-800 dark:text-green-500">{study.title}</h3>
+                <p className="mt-2 text-gray-700 dark:text-gray-200">{study.outcome}</p>
                 <blockquote className="mt-4 italic text-green-600 text-sm border-l-4 pl-4 border-green-500">
                   {study.quote}
                 </blockquote>

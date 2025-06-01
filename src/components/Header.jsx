@@ -47,10 +47,13 @@ export default function Header() {
             <Link
               key={to}
               to={to}
-              className={`p-2 rounded-2xl transition
-        hover:text-green-900 dark:hover:text-green-400
-        hover:bg-green-200 dark:hover:bg-green-800`}
-              aria-current={location.pathname === to ? "page" : undefined}
+              className={`relative p-2 rounded-2xl transition duration-300
+  ${
+    location.pathname === to
+      ? "text-green-700 dark:text-green-400 after:scale-x-100"
+      : "text-gray-700 dark:text-gray-200 hover:text-green-900 dark:hover:text-green-400 after:scale-x-0"
+  }
+  after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-3/4 after:h-[2px] after:bg-green-500 after:transition-transform after:duration-300 after:origin-center after:-translate-x-1/2`}
             >
               {label}
             </Link>
@@ -81,7 +84,13 @@ export default function Header() {
             <Link
               key={to}
               to={to}
-              className="block text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-100 dark:hover:bg-green-800 rounded-md transition px-2 py-1"
+              className={`relative p-2 rounded-2xl transition duration-300
+  ${
+    location.pathname === to
+      ? "text-green-700 dark:text-green-400 after:scale-x-100"
+      : "text-gray-700 dark:text-gray-200 hover:text-green-900 dark:hover:text-green-400 after:scale-x-0"
+  }
+  after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-3/4 after:h-[2px] after:bg-green-500 after:transition-transform after:duration-300 after:origin-center after:-translate-x-1/2`}
             >
               {label}
             </Link>

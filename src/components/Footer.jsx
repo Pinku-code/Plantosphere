@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaXTwitter } from "r
 
 export default function Footer() {
   return (
-    <footer className="bg-green-700 dark:bg-gray-900 text-white dark:text-green-300  text-sm">
+    <footer className="bg-green-700 dark:bg-gray-900 text-white dark:text-gray-300  text-sm">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div>
@@ -30,7 +30,7 @@ export default function Footer() {
               <li key={href}>
                 <a
                   href={href}
-                  className="hover:underline text-white dark:text-green-300 hover:text-green-300 dark:hover:text-green-400 transition"
+                  className="hover:underline text-white dark:text-gray-300 hover:text-green-300 dark:hover:text-green-400 transition"
                 >
                   {label}
                 </a>

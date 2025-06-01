@@ -1,15 +1,3 @@
-// 
-
-
-
-
-
-
-
-
-
-
-
 // --- FILE: src/pages/Contact.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -19,16 +7,16 @@ export default function Contact() {
     <>
       <Header />
       <section className="py-16 px-6 max-w-3xl mx-auto mt-14">
-        <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
+        <h2 className="text-4xl font-bold text-center text-green-700 dark:text-green-500 mb-2">
           Let’s Grow Together
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-10">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-200 mb-10">
           Reach out for inquiries or partnerships.
         </p>
 
-        <form className="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+        <form className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Full Name</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Full Name</label>
             <input
               type="text"
               placeholder="Your Name"
@@ -38,7 +26,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Email Address</label>
             <input
               type="email"
               placeholder="you@example.com"
@@ -48,7 +36,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone Number</label>
             <input
               type="tel"
               placeholder="+91-XXXXXXXXXX"
@@ -58,7 +46,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Inquiry Type</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Inquiry Type</label>
             <select
               className="mt-1 block w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-green-500 focus:border-green-500"
               required
@@ -74,7 +62,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Message</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Message</label>
             <textarea
               placeholder="Write your message..."
               rows="5"
@@ -86,7 +74,7 @@ export default function Contact() {
           {/* CAPTCHA placeholder */}
           <div className="flex items-center">
             <input type="checkbox" required className="mr-2" />
-            <label className="text-sm text-gray-600">I'm not a robot (CAPTCHA)</label>
+            <label className="text-sm text-gray-600 dark:text-gray-200">I'm not a robot (CAPTCHA)</label>
           </div>
 
           <button
@@ -98,7 +86,7 @@ export default function Contact() {
         </form>
 
         {/* Contact Info */}
-        <div className="text-center mt-10 text-gray-600 text-sm space-y-2">
+        <div className="text-center mt-10 text-gray-600 dark:text-gray-200 text-sm space-y-2">
           <p>
             Or email us directly at{" "}
             <a
