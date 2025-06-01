@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import { FaLeaf, FaShoppingCart, FaBook, FaHandsHelping } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import FarmImg from '../assets/Farm.jpg';
-import FarmerImg from '../assets/Farmer.jpg';
-import FarmingTechniqueImg from '../assets/FarmingTechnique.jpg';
-import SpiceImg from '../assets/Spice.jpg';
+import Kitchen from '../assets/pic2.jpg';
+import Solar from '../assets/pic3.jpg';
+import Plant from '../assets/pic4.jpg';
+import Tour from '../assets/pic5.jpg';
+
 
 const images = [
-  FarmImg,
-  FarmerImg,
-  FarmingTechniqueImg,
-  SpiceImg,
+  Kitchen,
+  Solar,
+  Plant,
+  Tour,
 ];
 
 const HeroSection = () => {
@@ -26,7 +27,7 @@ const HeroSection = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => nextSlide(), 3000);
+    const timer = setInterval(() => nextSlide(), 5000);
     return () => clearInterval(timer);
   }, []);
 
