@@ -1,190 +1,106 @@
+import { useState, useEffect } from 'react';
+import { FaLeaf, FaShoppingCart, FaBook, FaHandsHelping } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-// export default function HeroSection() {
-//   return (
-//     <section className="relative bg-cover bg-center h-[80vh] flex items-center justify-center" style={{ backgroundImage: "url('/hero.jpg')" }}>
-//       <div className="absolute inset-0 bg-black bg-opacity-60" />
-//       <div className="relative z-10 text-white text-center px-4">
-//         <h2 className="text-4xl md:text-5xl font-bold leading-tight">Innovating Food, Empowering Farmers</h2>
-//         <p className="mt-4 text-lg md:text-xl">Transforming agriculture through innovation and sustainability</p>
-//         <button className="mt-6 bg-white text-green-700 font-semibold px-6 py-3 rounded-full shadow hover:bg-green-100 transition">Explore Our Work</button>
-//       </div>
-//     </section>
-//   );
-// }
+import FarmImg from '../assets/Farm.jpg';
+import FarmerImg from '../assets/Farmer.jpg';
+import FarmingTechniqueImg from '../assets/FarmingTechnique.jpg';
+import SpiceImg from '../assets/Spice.jpg';
 
+const images = [
+  FarmImg,
+  FarmerImg,
+  FarmingTechniqueImg,
+  SpiceImg,
+];
 
+const HeroSection = () => {
+  const [current, setCurrent] = useState(0);
 
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
+  useEffect(() => {
+    const timer = setInterval(() => nextSlide(), 3000);
+    return () => clearInterval(timer);
+  }, []);
 
-
-
-
-
-
-
-
-// import { motion } from "framer-motion";
-// import TeaImage from "../assets/tea.jpg";
-
-// export default function HeroSection() {
-//   return (
-//     <section
-//       className="relative h-[90vh] bg-center bg-no-repeat bg-cover overflow-hidden m-1.5 rounded-xl shadow-lg"
-//       style={{ backgroundImage: `url(${TeaImage})` }}
-//     >
-//       {/* Overlay */}
-//       {/* <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div> */}
-
-//       {/* Animated Content */}
-//       <div className="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
-//         <motion.h1
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8 }}
-//           className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-md"
-//         >
-//           Innovating Food, <br className="hidden sm:block" />
-//           Empowering Farmers
-//         </motion.h1>
-
-//         <motion.p
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ delay: 0.5, duration: 0.8 }}
-//           className="mt-6 text-lg md:text-2xl text-gray-200 max-w-2xl"
-//         >
-//           Transforming agriculture through innovation, sustainability, and technology.
-//         </motion.p>
-
-//         <motion.a
-//           href="#"
-//           initial={{ opacity: 0, scale: 0.9 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ delay: 1, duration: 0.5 }}
-//           className="mt-8 inline-block px-8 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow-lg hover:bg-green-100 transition duration-300"
-//         >
-//           Explore Our Work
-//         </motion.a>
-//       </div>
-
-//       {/* Decorative Floating Elements */}
-//       <motion.div
-//         className="absolute top-10 left-10 w-16 h-16 bg-green-400 rounded-full opacity-30 blur-xl"
-//         animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
-//         transition={{ repeat: Infinity, duration: 6 }}
-//       />
-//       <motion.div
-//         className="absolute bottom-10 right-10 w-20 h-20 bg-green-600 rounded-full opacity-30 blur-xl"
-//         animate={{ y: [0, 25, 0], x: [0, -25, 0] }}
-//         transition={{ repeat: Infinity, duration: 8 }}
-//       />
-//     </section>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import { motion } from "framer-motion";
-import HeroImage from "../assets/tea.jpg"; // Replace with actual image path
-
-export default function HeroSection() {
   return (
-    <section
-      className="relative h-[90vh] bg-center bg-no-repeat bg-cover overflow-hidden m-1.5 rounded-xl shadow-lg"
-      style={{ backgroundImage: `url(${HeroImage})` }}
-    >
-      {/* Animated Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-md"
-        >
-          Innovating Agriculture, <br className="hidden sm:block" />
-          Empowering Communities
-        </motion.h1>
+    <section className="relative bg-gradient-to-b from-white to-green-50 dark:from-green-900 dark:to-gray-900 text-green-900 dark:text-green-300 overflow-hidden transition-colors duration-500">
+      {/* Decorative SVG */}
+      <svg
+        className="absolute top-0 left-0 w-64 opacity-10 dark:opacity-20"
+        viewBox="0 0 100 100"
+        fill="none"
+      >
+        <circle cx="50" cy="50" r="50" className="fill-green-600 dark:fill-green-400" />
+      </svg>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-6 text-lg md:text-2xl text-gray-200 max-w-2xl"
+      {/* Carousel */}
+      <div
+        className="relative mt-25 w-full shadow-2xl h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-4xl"
+        data-aos="fade-up"
+      >
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Slide ${index}`}
+            className={`absolute px-8 py-4 rounded-4xl top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              index === current ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-green-600 dark:text-green-300 p-2 rounded-full shadow-lg hover:scale-110 transition"
+          aria-label="Previous Slide"
         >
-          Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions through
-          cutting-edge products, training, and research.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <motion.a
-            href="#services"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
-          >
-            Explore Our Solutions
-          </motion.a>
-          <motion.a
-            href="#products"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
-            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
-          >
-            Shop Our Products
-          </motion.a>
-          <motion.a
-            href="#training"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.4, duration: 0.5 }}
-            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
-          >
-            Join Our Training
-          </motion.a>
-          <motion.a
-            href="#journal"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.6, duration: 0.5 }}
-            className="px-6 py-3 bg-white text-green-700 font-semibold text-lg rounded-full shadow hover:bg-green-100 transition duration-300"
-          >
-            Submit to Our Journal
-          </motion.a>
-        </div>
+          <IoIosArrowBack size={24} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-green-600 dark:text-green-300 p-2 rounded-full shadow-lg hover:scale-110 transition"
+          aria-label="Next Slide"
+        >
+          <IoIosArrowForward size={24} />
+        </button>
       </div>
 
-      {/* Decorative Floating Elements */}
-      <motion.div
-        className="absolute top-10 left-10 w-16 h-16 bg-green-400 rounded-full opacity-30 blur-xl"
-        animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
-        transition={{ repeat: Infinity, duration: 6 }}
-      />
-      <motion.div
-        className="absolute bottom-10 right-10 w-20 h-20 bg-green-600 rounded-full opacity-30 blur-xl"
-        animate={{ y: [0, 25, 0], x: [0, -25, 0] }}
-        transition={{ repeat: Infinity, duration: 8 }}
-      />
+      {/* Headline */}
+      <div className="text-center px-4 py-8 md:py-12" data-aos="fade-up">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          Innovating Agriculture, Empowering Communities
+        </h1>
+        <p className="text-lg md:text-xl mb-8 text-green-700 dark:text-green-400">
+          Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions through cutting-edge products, training, and research.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap justify-center gap-4">
+          {[
+            { href: '/services', icon: <FaLeaf />, label: 'Explore Our Solutions' },
+            { href: '/products', icon: <FaShoppingCart />, label: 'Shop Our Products' },
+            { href: '/training', icon: <FaHandsHelping />, label: 'Join Our Training' },
+            { href: '/journal', icon: <FaBook />, label: 'Submit to Our Journal' },
+          ].map(({ href, icon, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="w-48 h-14 bg-green-600 text-white flex items-center justify-center gap-2 rounded-full shadow-md hover:bg-green-700 dark:hover:bg-green-800 transition duration-300"
+            >
+              {icon} {label}
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default HeroSection;

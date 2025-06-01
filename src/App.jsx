@@ -1,37 +1,35 @@
 // --- FILE: src/App.jsx ---
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
-import ProductPage from "./pages/ProductPage";
-import Services from "./pages/Services";
-import Training from "./pages/TrainingEvents";	
-import Blog from "./pages/Blog";
-import Journal from "./pages/Journal";
-import CaseStudiesPage from "./pages/CaseStudies";
-import CollaboratePage from "./pages/Collaborate";
-import Incubation from "./pages/Incubation";
-import Team from "./pages/Team";
-import Contact from "./pages/Contact";
-// import other pages when ready
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
+import PlantLoader from "../src/components/plantloader";
+import RoutesConfig from "../src/Routes";
 
 export default function App() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  // Show loader on every route change
+  useEffect(() => {
+    setLoading(true);
+
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [location]);
+
+  // Initialize AOS animations
+  useEffect(() => {
+    AOS.init({ duration: 300 });
+  }, []);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      {/* <Route path="/products" element={<Products />} /> */}
-      <Route path="/products" element={<Products />} />
-      <Route path="/products/:id" element={<ProductPage />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/training" element={<Training />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/journal" element={<Journal />} />
-      <Route path="/case-studies" element={<CaseStudiesPage />} />
-      <Route path="/collaborate" element={<CollaboratePage />} />
-      <Route path="/team" element={<Team />} />
-      <Route path="/contact" element={<Contact />} />
-      {/* Add more routes as pages are created */}
-    </Routes>
+    <>
+      {loading && <PlantLoader />}
+      <RoutesConfig />
+    </>
   );
 }
