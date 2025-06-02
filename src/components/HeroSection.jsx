@@ -1,29 +1,13 @@
 import { useState, useEffect } from "react";
 import { FaLeaf, FaShoppingCart, FaBook, FaHandsHelping } from "react-icons/fa";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Carousel from "./Carousel";
 
 import Kitchen from "../assets/pic2.jpg";
 import Solar from "../assets/pic3.jpg";
 import Plant from "../assets/pic4.jpg";
 import Tour from "../assets/pic5.jpg";
 
-const images = [Kitchen, Solar, Plant, Tour];
-
 const HeroSection = () => {
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => nextSlide(), 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section className="relative bg-gradient-to-b from-white to-green-50 dark:from-green-900 dark:to-gray-900 text-green-900 dark:text-green-500 overflow-hidden transition-colors duration-500">
@@ -42,42 +26,14 @@ const HeroSection = () => {
       </svg>
 
       {/* Carousel */}
-      <div
-        className="relative mt-25 w-full max-w-[95%] mx-auto shadow-2xl h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-2xl"
-        data-aos="fade-up"
-      >
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Slide ${index}`}
-            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out rounded-2xl ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
-        <button
-          onClick={prevSlide}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-green-600 dark:text-green-300 p-2 rounded-full shadow-lg hover:scale-110 transition"
-          aria-label="Previous Slide"
-        >
-          <IoIosArrowBack size={24} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-green-600 dark:text-green-300 p-2 rounded-full shadow-lg hover:scale-110 transition"
-          aria-label="Next Slide"
-        >
-          <IoIosArrowForward size={24} />
-        </button>
-      </div>
+      <Carousel images={[Kitchen, Solar, Plant, Tour]} />
 
       {/* Headline */}
       <div className="text-center px-4 py-8 md:py-12" data-aos="fade-up">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">
+        <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Innovating Agriculture, Empowering Communities
         </h1>
-        <p className="text-lg md:text-xl mb-8 text-green-700 dark:text-gray-300">
+        <p className="text-sm md:text-lg mb-8 text-green-700 dark:text-gray-300">
           Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions
           through cutting-edge products, training, and research.
         </p>
@@ -109,7 +65,7 @@ const HeroSection = () => {
             <a
               key={href}
               href={href}
-              className="w-48 h-14 bg-green-600 text-white flex items-center justify-center gap-2 rounded-full shadow-md hover:bg-green-700 dark:hover:bg-green-800 transition duration-300"
+              className="w-29 h-10 text-[10px] md:text-[16px] md:w-48 md:h-14 bg-green-600 text-white flex items-center justify-center gap-1 md:gap-2  rounded-full shadow-md hover:bg-green-700 dark:hover:bg-green-800 transition duration-300"
             >
               {icon} {label}
             </a>

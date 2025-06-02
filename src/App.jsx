@@ -25,14 +25,14 @@ export default function App() {
 
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   // Initialize AOS animations
   useEffect(() => {
-    AOS.init({ duration: 300 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
