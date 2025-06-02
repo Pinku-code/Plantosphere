@@ -4,9 +4,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import PlantLoader from "../src/components/plantloader";
 import RoutesConfig from "../src/Routes";
+import { useLocation } from "react-router-dom";
+import { initGA, trackPageview } from "./lib/analytics";
 
 export default function App() {
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  // google-analytics set-up 
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    trackPageview(location.pathname + location.search);
+  }, [location]);
 
   // Show loader on every route change
   useEffect(() => {

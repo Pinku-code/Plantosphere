@@ -1,19 +1,13 @@
-import { useState, useEffect } from 'react';
-import { FaLeaf, FaShoppingCart, FaBook, FaHandsHelping } from 'react-icons/fa';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { useState, useEffect } from "react";
+import { FaLeaf, FaShoppingCart, FaBook, FaHandsHelping } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-import Kitchen from '../assets/pic2.jpg';
-import Solar from '../assets/pic3.jpg';
-import Plant from '../assets/pic4.jpg';
-import Tour from '../assets/pic5.jpg';
+import Kitchen from "../assets/pic2.jpg";
+import Solar from "../assets/pic3.jpg";
+import Plant from "../assets/pic4.jpg";
+import Tour from "../assets/pic5.jpg";
 
-
-const images = [
-  Kitchen,
-  Solar,
-  Plant,
-  Tour,
-];
+const images = [Kitchen, Solar, Plant, Tour];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
@@ -39,12 +33,17 @@ const HeroSection = () => {
         viewBox="0 0 100 100"
         fill="none"
       >
-        <circle cx="50" cy="50" r="50" className="fill-green-600 dark:fill-green-400" />
+        <circle
+          cx="50"
+          cy="50"
+          r="50"
+          className="fill-green-600 dark:fill-green-400"
+        />
       </svg>
 
       {/* Carousel */}
       <div
-        className="relative mt-25 w-full shadow-2xl h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-4xl"
+        className="relative mt-25 w-full max-w-[95%] mx-auto shadow-2xl h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-2xl"
         data-aos="fade-up"
       >
         {images.map((src, index) => (
@@ -52,8 +51,8 @@ const HeroSection = () => {
             key={index}
             src={src}
             alt={`Slide ${index}`}
-            className={`absolute px-8 py-4 rounded-4xl top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-              index === current ? 'opacity-100' : 'opacity-0'
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out rounded-2xl ${
+              index === current ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
@@ -79,16 +78,33 @@ const HeroSection = () => {
           Innovating Agriculture, Empowering Communities
         </h1>
         <p className="text-lg md:text-xl mb-8 text-green-700 dark:text-gray-300">
-          Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions through cutting-edge products, training, and research.
+          Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions
+          through cutting-edge products, training, and research.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           {[
-            { href: '/services', icon: <FaLeaf />, label: 'Explore Our Solutions' },
-            { href: '/products', icon: <FaShoppingCart />, label: 'Shop Our Products' },
-            { href: '/training', icon: <FaHandsHelping />, label: 'Join Our Training' },
-            { href: '/journal', icon: <FaBook />, label: 'Submit to Our Journal' },
+            {
+              href: "/services",
+              icon: <FaLeaf />,
+              label: "Explore Our Solutions",
+            },
+            {
+              href: "/products",
+              icon: <FaShoppingCart />,
+              label: "Shop Our Products",
+            },
+            {
+              href: "/training",
+              icon: <FaHandsHelping />,
+              label: "Join Our Training",
+            },
+            {
+              href: "/journal",
+              icon: <FaBook />,
+              label: "Submit to Our Journal",
+            },
           ].map(({ href, icon, label }) => (
             <a
               key={href}
