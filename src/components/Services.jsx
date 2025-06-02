@@ -19,7 +19,7 @@ const ServicesSection = () => {
           <h2 className="text-3xl font-bold mb-6 text-green-800 dark:text-green-400">
             Services
           </h2>
-          <p className="text-lg leading-relaxed mb-6 text-green-900 dark:text-green-300">
+          <p className="text-lg leading-relaxed mb-6 text-green-900 dark:text-gray-200">
             From kitchen garden design and agri-tourism to food processing and carbon credit consulting, our services empower farmers, businesses, and communities. We also offer renewable energy solutions and bulk raw material supply.
           </p>
           <a

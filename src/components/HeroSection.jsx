@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-green-50 dark:from-green-900 dark:to-gray-900 text-green-900 dark:text-green-300 overflow-hidden transition-colors duration-500">
+    <section className="relative bg-gradient-to-b from-white to-green-50 dark:from-green-900 dark:to-gray-900 text-green-900 dark:text-green-500 overflow-hidden transition-colors duration-500">
       {/* Decorative SVG */}
       <svg
         className="absolute top-0 left-0 w-64 opacity-10 dark:opacity-20"
@@ -77,7 +77,7 @@ const HeroSection = () => {
         <h1 className="text-3xl md:text-5xl font-bold mb-4">
           Innovating Agriculture, Empowering Communities
         </h1>
-        <p className="text-lg md:text-xl mb-8 text-green-700 dark:text-green-400">
+        <p className="text-lg md:text-xl mb-8 text-green-700 dark:text-gray-300">
           Plantosphere Pvt. Ltd. delivers sustainable agri-food solutions through cutting-edge products, training, and research.
         </p>
 

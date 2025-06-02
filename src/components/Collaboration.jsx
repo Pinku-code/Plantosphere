@@ -8,8 +8,8 @@ const CollaborationSection = () => {
         
         {/* Text Content */}
         <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-400">Collaborate with Us</h2>
-          <p className="text-lg mb-4 dark:text-green-300">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-500">Collaborate with Us</h2>
+          <p className="text-lg mb-4 dark:text-gray-200">
             Partner with us for impactful research, hands-on training, or carbon credit consulting. We actively collaborate with academia, NGOs, and businesses to build a more sustainable agri-food ecosystem.
           </p>
           <a

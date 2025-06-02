@@ -6,8 +6,8 @@ const ContactSection = () => {
       <div className="max-w-4xl mx-auto flex flex-col gap-8 items-center text-center">
         {/* Heading & Text */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-400">Get in Touch</h2>
-          <p className="text-lg dark:text-green-300">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-500">Get in Touch</h2>
+          <p className="text-lg dark:text-gray-200">
             Have questions or ideas? Reach out to discuss products, services, or partnerships.
           </p>
         </div>

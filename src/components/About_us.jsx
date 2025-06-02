@@ -10,7 +10,7 @@ const AboutUsSection = () => {
           <h2 className="text-3xl font-bold mb-6 dark:text-green-400">
             About Us
           </h2>
-          <p className="text-lg leading-relaxed mb-6 dark:text-green-300">
+          <p className="text-lg leading-relaxed mb-6 dark:text-gray-200">
             Our mission is to drive sustainability in agriculture and food processing. We specialize in kitchen garden design, landscaping, renewable energy, carbon credit consulting, agri-tourism, and government project consultancy. Collaborating with ICAR-CISH and IIT Kharagpur, we’re building a resilient agri-food ecosystem.
           </p>
           <a

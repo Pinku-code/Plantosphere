@@ -5,7 +5,7 @@ import TeamImg from '../assets/Farm.jpg'; // Replace with your actual image
 const AboutSection = () => {
   return (
     <section
-      className="bg-white text-green-900 dark:bg-gray-900 dark:text-green-300 py-12 px-4 md:px-16"
+      className="bg-white text-green-900 dark:bg-gray-900 dark:text-white py-12 px-4 md:px-16"
       data-aos="fade-up"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -14,7 +14,7 @@ const AboutSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-green-800 dark:text-green-400">
             About the Company
           </h2>
-          <p className="text-md sm:text-lg text-green-700 dark:text-green-300 leading-relaxed mb-6">
+          <p className="text-md sm:text-lg text-green-700 dark:text-gray-200 leading-relaxed mb-6">
             Plantosphere Pvt. Ltd. is a registered agribusiness startup revolutionizing India’s agriculture and food processing sectors. We empower farmers and communities through sustainable practices, innovative products, and knowledge-sharing.
           </p>
           <a

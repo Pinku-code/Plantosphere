@@ -17,10 +17,10 @@ const TeamSection = () => {
 
         {/* Text */}
         <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-800 dark:text-green-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-800 dark:text-green-500">
             Our Team
           </h2>
-          <p className="text-lg mb-4 text-green-900 dark:text-green-300">
+          <p className="text-lg mb-4 text-green-900 dark:text-gray-200">
             Meet our passionate team, led by <strong>Ozair Alam</strong>, driving innovation in agri-food systems. From ICAR experts to dedicated field coordinators, we are committed to creating real impact across communities.
           </p>
 

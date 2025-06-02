@@ -17,14 +17,14 @@ const BlogSection = () => {
 
         {/* Text */}
         <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-green-500">
             Plantosphere Blog
           </h2>
-          <p className="text-lg mb-2 dark:text-green-300">
+          <p className="text-lg mb-2 dark:text-gray-200">
             Stay updated with insights on kitchen gardening, sustainable agriculture, and industry trends.
           </p>
-          <p className="text-green-800 dark:text-green-500 font-medium mb-4">
-            <strong>Latest Post:</strong> “5 Tips for Urban Kitchen Gardens”
+          <p className="text-green-800 dark:text-gray-300 font-medium mb-4">
+            <strong className='dark:text-green-600'>Latest Post:</strong> “5 Tips for Urban Kitchen Gardens”
           </p>
           
           {/* CTA */}

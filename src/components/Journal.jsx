@@ -4,7 +4,7 @@ import JournalCover from "../assets/DarjlingTea.jpg"; // Replace with actual ima
 const JournalSection = () => {
   return (
     <section
-      className="bg-green-50 dark:bg-gray-900 text-green-900 dark:text-green-300 px-4 py-12 md:py-16 transition-colors duration-500"
+      className="bg-green-50 dark:bg-gray-900 text-green-900 dark:text-gray-200 px-4 py-12 md:py-16 transition-colors duration-500"
       data-aos="fade-up"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -19,16 +19,16 @@ const JournalSection = () => {
 
         {/* Textual Content */}
         <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-500">
             Plantosphere Journal of Agri-Food Innovation
           </h2>
-          <p className="text-lg mb-4">
-            <strong>Top Article:</strong> “Solar Drying Techniques for Rural Farmers”
+          <p className="text-lg mb-4 ">
+            <strong className='dark:text-green-600'>Top Article:</strong> “Solar Drying Techniques for Rural Farmers”
           </p>
-          <p className="italic mb-4 text-green-800 dark:text-green-400">
+          <p className="italic mb-4 text-green-800 dark:text-gray-300">
             “Learn how solar drying boosts farmer incomes in rural Bengal by reducing crop spoilage and lowering post-harvest costs. This technique improves food shelf life and ensures year-round market access.”
           </p>
-          <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
+          <p className="text-sm text-gray-700 dark:text-gray-100 mb-4">
             *Plantosphere retains full patent and copyright ownership for published articles.*
           </p>
 

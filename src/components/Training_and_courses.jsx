@@ -19,7 +19,7 @@ const TrainingCoursesSection = () => {
           <h2 className="text-3xl font-bold mb-6 text-green-800 dark:text-green-400">
             Training & Courses
           </h2>
-          <p className="text-lg leading-relaxed mb-6 text-green-900 dark:text-green-300">
+          <p className="text-lg leading-relaxed mb-6 text-green-900 dark:text-gray-200">
             Join our affordable programs in kitchen gardening, organic farming, food processing, and sustainable packaging. Online and hybrid options with certifications.
           </p>
           <a
