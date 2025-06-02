@@ -1,12 +1,3 @@
-// 
-
-
-
-
-
-
-
-
 // --- FILE: src/pages/Products.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -72,7 +63,7 @@ export default function Products() {
         <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
           Sustainable, Healthy, and Innovative
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-100 mb-12">
           Shop our agri-food, wellness, and gardening products online.
         </p>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
@@ -87,11 +78,11 @@ export default function Products() {
                 className="w-full h-48 object-cover rounded"
               />
               <div className="mt-4">
-                <h3 className="font-bold text-xl text-green-800">
+                <h3 className="font-bold text-xl text-green-800 dark:text-green-600">
                   {product.name}
                 </h3>
-                <p className="text-sm text-gray-500 mb-1">{product.category}</p>
-                <p className="text-green-700 font-semibold">{product.price}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-200 mb-1">{product.category}</p>
+                <p className="text-green-700 dark:text-green-500 font-semibold">{product.price}</p>
                 <p className="text-sm mt-2">
                   <strong>Ingredients:</strong> {product.ingredients}
                 </p>

@@ -47,10 +47,13 @@ export default function Header() {
             <Link
               key={to}
               to={to}
-              className={`p-2 rounded-2xl transition
-        hover:text-green-900 dark:hover:text-green-400
-        hover:bg-green-200 dark:hover:bg-green-800`}
-              aria-current={location.pathname === to ? "page" : undefined}
+              className={`relative p-2 rounded-2xl transition duration-300
+  ${
+    location.pathname === to
+      ? "text-green-700 dark:text-green-400 after:scale-x-100"
+      : "text-gray-700 dark:text-gray-200 hover:text-green-900 dark:hover:text-green-400 after:scale-x-0"
+  }
+  after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-3/4 after:h-[2px] after:bg-green-500 after:transition-transform after:duration-300 after:origin-center after:-translate-x-1/2`}
             >
               {label}
             </Link>
@@ -76,32 +79,42 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 rounded-b-2xl px-4 pb-4 space-y-2 text-sm font-medium">
-          {navItems.map(({ to, label }) => (
-            <Link
-              key={to}
-              to={to}
-              className="block text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-100 dark:hover:bg-green-800 rounded-md transition px-2 py-1"
-            >
-              {label}
-            </Link>
-          ))}
-          <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
-            <Link
-              to="/profile"
-              className="block text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-100 dark:hover:bg-green-800 rounded-md transition px-2 py-1"
-            >
-              Profile
-            </Link>
-            <Link
-              to="/logout"
-              className="block text-red-600 dark:text-red-400 hover:underline"
-            >
-              Logout
-            </Link>
-          </div>
-        </div>
-      )}
+  <div className="md:hidden bg-white dark:bg-gray-900 rounded-b-2xl px-4 pb-4 space-y-2 text-sm font-medium">
+    {navItems.map(({ to, label }) => (
+      <Link
+        key={to}
+        to={to}
+        className={`relative block transition px-2 py-1 rounded-md 
+          ${location.pathname === to
+            ? 'text-green-700 dark:text-green-400 after:scale-x-100'
+            : 'text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 after:scale-x-0'}
+          after:content-[''] after:absolute after:left-4/10 after:bottom-0 after:w-9/10 after:h-[2px] after:bg-green-500 after:transition-transform after:duration-300 after:origin-left after:-translate-x-1/2`}
+      >
+        {label}
+      </Link>
+    ))}
+
+    <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+      <Link
+        to="/profile"
+        className={`relative block transition px-2 py-1 rounded-md
+          ${location.pathname === "/profile"
+            ? 'text-green-700 dark:text-green-400 after:scale-x-100'
+            : 'text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 after:scale-x-0'}
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-3/4 after:h-[2px] after:bg-green-500 after:transition-transform after:duration-300 after:origin-center after:-translate-x-1/2`}
+      >
+        Profile
+      </Link>
+      <Link
+        to="/logout"
+        className="block text-red-600 dark:text-red-400 hover:underline px-2 py-1"
+      >
+        Logout
+      </Link>
+    </div>
+  </div>
+)}
+
     </header>
   );
 }

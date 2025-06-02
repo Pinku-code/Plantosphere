@@ -1,13 +1,3 @@
-// 
-
-
-
-
-
-
-
-
-
 // --- FILE: src/pages/Services.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -68,10 +58,10 @@ export default function Services() {
     <>
       <Header />
       <section className="py-16 px-6 max-w-7xl mx-auto mt-14">
-        <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
+        <h2 className="text-4xl font-bold text-center text-green-700 dark:text-green-500 mb-2">
           End-to-End Agri-Food & Sustainability Solutions
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-200 mb-12">
           From farm to market, we drive growth with innovative services.
         </p>
 
@@ -79,10 +69,10 @@ export default function Services() {
           {services.map(({ title, description }, i) => (
             <div
               key={i}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl border-l-4 border-green-600 transition"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl border-l-4 border-green-600 dark:border-green-400 transition"
             >
-              <h3 className="text-xl font-semibold mb-2 text-green-800">{title}</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-green-800 dark:text-green-500">{title}</h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{description}</p>
             </div>
           ))}
         </div>

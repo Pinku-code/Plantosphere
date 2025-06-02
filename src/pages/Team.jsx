@@ -1,10 +1,3 @@
-// 
-
-
-
-
-
-
 // --- FILE: src/pages/Team.jsx ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -49,30 +42,30 @@ export default function Team() {
     <>
       <Header />
       <section className="py-16 px-6 max-w-6xl mx-auto mt-14">
-        <h2 className="text-4xl font-bold text-center text-green-700 mb-2">
+        <h2 className="text-4xl font-bold text-center text-green-700 dark:text-green-500 mb-2">
           The Minds Behind Plantosphere
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-200 mb-12">
           Our team drives innovation and impact.
         </p>
 
         {Object.entries(team).map(([group, members], idx) => (
           <div key={idx} className="mb-12">
-            <h3 className="text-2xl font-semibold text-green-800 mb-6">{group}</h3>
+            <h3 className="text-2xl font-semibold text-green-800 dark:text-green-500 mb-6">{group}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {members.map((member, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition"
+                  className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition"
                 >
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
                   />
-                  <h4 className="text-xl font-semibold text-green-900">{member.name}</h4>
-                  <p className="text-sm text-indigo-600 font-medium">{member.role}</p>
-                  <p className="mt-2 text-gray-600 text-sm">{member.bio}</p>
+                  <h4 className="text-xl font-semibold text-green-900 dark:text-green-600">{member.name}</h4>
+                  <p className="text-sm text-indigo-600 dark:text-indigo-300 font-medium">{member.role}</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-200 text-sm">{member.bio}</p>
                 </div>
               ))}
             </div>
