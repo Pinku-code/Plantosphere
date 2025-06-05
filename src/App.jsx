@@ -19,7 +19,7 @@ export default function App() {
     trackPageview(location.pathname + location.search);
   }, [location]);
 
-  // Show loader on every route change
+  // Show loader on page load
   useEffect(() => {
     setLoading(true);
 
