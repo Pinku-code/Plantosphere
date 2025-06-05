@@ -1,22 +1,55 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const Carousel = ({ images }) => {
-  const [current, setCurrent] = useState(0);
-  const length = images.length;
+  const [current, setCurrent] = useState(1); // Start at 1 because of clone
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const slideRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const length = images.length;
+
+  const totalSlides = length + 2; // Includes cloned first and last
+
+  // Auto Slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrent((prev) => prev + 1);
+    setIsTransitioning(true);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => prev - 1);
+    setIsTransitioning(true);
+  };
+
+  // Handle loop back to real slide after clone
+  useEffect(() => {
+    if (current === totalSlides - 1) {
+      // If at cloned first (last image), reset to real first
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrent(1);
+      }, 700);
+    }
+    if (current === 0) {
+      // If at cloned last (first image), reset to real last
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrent(length);
+      }, 700);
+    }
+    return () => clearTimeout(timeoutRef.current);
+  }, [current, length]);
+
+  // Touch Swipe
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
-  // Autoplay
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % length);
-    }, 2500); // Change every 4s
-
-    return () => clearInterval(interval);
-  }, [length]);
-
-  // Swipe detection
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -26,21 +59,20 @@ const Carousel = ({ images }) => {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-
     const distance = touchStartX.current - touchEndX.current;
-
-    if (distance > 50) {
-      // swipe left
-      setCurrent((prev) => (prev + 1) % length);
-    } else if (distance < -50) {
-      // swipe right
-      setCurrent((prev) => (prev - 1 + length) % length);
-    }
+    if (distance > 50) nextSlide();
+    else if (distance < -50) prevSlide();
 
     touchStartX.current = null;
     touchEndX.current = null;
   };
+
+  // Render slides: [lastClone, ...images, firstClone]
+  const slides = [
+    images[length - 1], // Clone of last
+    ...images,
+    images[0], // Clone of first
+  ];
 
   return (
     <div
@@ -50,18 +82,22 @@ const Carousel = ({ images }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Sliding Images */}
+      {/* Slider */}
       <div
         ref={slideRef}
-        className="flex transition-transform duration-700 ease-in-out h-full"
+        className={`flex h-full ${
+          isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
+        }`}
         style={{ transform: `translateX(-${current * 100}%)` }}
+        onTransitionEnd={() => setIsTransitioning(true)}
       >
-        {images.map((src, index) => (
+        {slides.map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Slide ${index}`}
             className="w-full flex-shrink-0 object-cover h-[380px] sm:h-[400px] md:h-[500px]"
+            draggable="false"
           />
         ))}
       </div>
@@ -71,9 +107,12 @@ const Carousel = ({ images }) => {
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrent(index)}
+            onClick={() => {
+              setCurrent(index + 1); // +1 to skip the clone
+              setIsTransitioning(true);
+            }}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              current === index ? "bg-green-600 scale-105" : "bg-white/60"
+              current === index + 1 ? "bg-green-600 scale-105" : "bg-white/60"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
