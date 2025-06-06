@@ -9,9 +9,9 @@ import Blog from "./pages/Blog";
 import Journal from "./pages/Journal";
 import CaseStudiesPage from "./pages/CaseStudies";
 import CollaboratePage from "./pages/Collaborate";
-import Incubation from "./pages/Incubation";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
+import Plantos from "./pages/Plantos";
 
 const RoutesConfig = () => (
   <Routes>
@@ -26,6 +26,7 @@ const RoutesConfig = () => (
       <Route path="/collaborate" element={<CollaboratePage />} />
       <Route path="/team" element={<Team />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/plantos" element={<Plantos />} />
       {/* Add more routes as pages are created */}
     </Routes>
 );

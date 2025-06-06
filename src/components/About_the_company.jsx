@@ -1,6 +1,7 @@
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import TeamImg from '../assets/Farm.jpg'; // Replace with your actual image
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import TeamImg from "../assets/Farm.jpg"; 
+import About_intro from "./About_intro"
 
 const AboutSection = () => {
   return (
@@ -10,18 +11,15 @@ const AboutSection = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Text Content */}
-        <div className="flex-1">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-green-800 dark:text-green-400">
-            About the Company
-          </h2>
-          <p className="text-md sm:text-lg text-green-700 dark:text-gray-200 leading-relaxed mb-6">
-            Plantosphere Pvt. Ltd. is a registered agribusiness startup revolutionizing India’s agriculture and food processing sectors. We empower farmers and communities through sustainable practices, innovative products, and knowledge-sharing.
-          </p>
+        <div className="flex flex-col md:flex-1 mx-auto justify-center items-center gap-4">
+          
+          <About_intro />
+
           <a
             href="/about"
             className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 dark:bg-green-700 text-white rounded-full shadow-md hover:bg-green-700 dark:hover:bg-green-800 transition duration-300"
           >
-            Learn More <FaArrowRight />
+            Read More <FaArrowRight />
           </a>
         </div>
 
