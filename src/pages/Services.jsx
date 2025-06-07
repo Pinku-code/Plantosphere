@@ -11,7 +11,7 @@ const services = [
     title: "Urban Gardening",
     description:
       "Designing and maintaining sustainable kitchen gardens in urban spaces.",
-    image: "../../src/assets/Chilli.jpg",
+    image: `../../src/assets/Chilli.jpg`,
     moreInfo:
       "Includes training, soil testing, and native plant selection services tailored for homes and communities.",
   },
