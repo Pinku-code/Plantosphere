@@ -11,7 +11,7 @@ const services = [
     title: "Urban Gardening",
     description:
       "Designing and maintaining sustainable kitchen gardens in urban spaces.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Includes training, soil testing, and native plant selection services tailored for homes and communities.",
   },
@@ -19,7 +19,7 @@ const services = [
     title: "Organic Products",
     description:
       "Access to curated organic supplies for home, farm, and lifestyle.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Get soil enhancers, fertilizers, pest repellents, and health boosters certified for organic standards.",
   },
@@ -27,14 +27,14 @@ const services = [
     title: "Kitchen Garden Design",
     description:
       "Custom urban/rural gardens, including vertical and hydroponic systems.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "From terrace gardens to hydroponics, we tailor installations and guide you in growing your own organic food.",
   },
   {
     title: "Landscaping & Urban Greening",
     description: "Sustainable designs for homes, offices, and public spaces.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "We blend aesthetics with sustainability for lawns, vertical walls, parks, and commercial properties.",
   },
@@ -42,7 +42,7 @@ const services = [
     title: "Agri-Tourism",
     description:
       "Farm tours and hands-on workshops showcasing sustainable practices and local culture.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Host or attend farm stays, food trails, and cultivation workshops that foster eco-awareness.",
   },
@@ -50,7 +50,7 @@ const services = [
     title: "Agri Input Supply",
     description:
       "Providing seeds, organic fertilizers, and bio-pesticides to promote healthy farming.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "We ensure quality-certified input supply chains to smallholder farmers and urban growers alike.",
   },
@@ -58,7 +58,7 @@ const services = [
     title: "Food Processing Consulting",
     description:
       "Expertise in drying, preservation, and sustainable packaging techniques.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Our experts guide your value-addition journey from raw produce to market-ready packaged goods.",
   },
@@ -66,7 +66,7 @@ const services = [
     title: "Bulk Raw Material Supply",
     description:
       "Supply of jute, maize, chilies, and spices for domestic/export markets.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Sourcing and logistics support for certified, traceable raw materials in bulk.",
   },
@@ -74,7 +74,7 @@ const services = [
     title: "Export-Import Advisory",
     description:
       "Support with FSSAI/APEDA certifications, logistics, and global market access.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "We help agri-entrepreneurs navigate licenses, connect with overseas buyers, and scale.",
   },
@@ -82,7 +82,7 @@ const services = [
     title: "Renewable Energy Solutions",
     description:
       "Solar-powered tools and irrigation systems for sustainable agriculture.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Deploy solar pumps, bio-digesters, and smart energy tools for off-grid farming.",
   },
@@ -90,7 +90,7 @@ const services = [
     title: "Sustainable Packaging Consulting",
     description:
       "Eco-friendly and biodegradable packaging solutions for food products.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Transition from plastic to compostable packs with our design and sourcing partners.",
   },
@@ -98,7 +98,7 @@ const services = [
     title: "Government Project Consultancy",
     description:
       "Support for agriculture and food sector grants and government-backed initiatives.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "We draft DPRs, coordinate schemes (PMFME, MIDH, FPO), and ensure compliance.",
   },
@@ -106,7 +106,7 @@ const services = [
     title: "Event & Workshop Planning",
     description:
       "Organizing agri summits, hands-on trainings, and sustainability conferences.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "Full-cycle event management from concept to execution for eco-events and learning hubs.",
   },
@@ -114,7 +114,7 @@ const services = [
     title: "Custom Reports & Research",
     description:
       "Agro-climatic studies, feasibility reports, and market insights for data-driven planning.",
-    image: "../../src/assets/AppleJuice.jpg",
+    image: "../../src/assets/Chilli.jpg",
     moreInfo:
       "We generate reliable reports for banks, policymakers, and agribusinesses.",
   },
@@ -216,7 +216,7 @@ export default function Services() {
             </svg>
 
           </a>
-          
+
         </div>
       </section>
       <Footer />
