@@ -52,6 +52,9 @@ export default function Footer() {
             </a>
           </p>
           <p>Phone: +91-XXXXXXXXXX</p>
+          <p>
+            <a href="/contact" className="underline hover:text-green-500">Contact Us</a>
+          </p>
           <div className="flex gap-4 mt-3 text-xl text-white dark:text-green-300">
             <a href="#" aria-label="LinkedIn" className="hover:text-green-300 dark:hover:text-green-400 transition">
               <FaLinkedinIn />

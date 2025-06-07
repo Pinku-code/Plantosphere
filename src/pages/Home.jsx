@@ -10,7 +10,6 @@ import JournalSection from "../components/Journal";
 import BlogSection from "../components/Blog";
 import TeamSection from "../components/Team";
 import CollaborationSection from "../components/Collaboration";
-import ContactSection from "../components/Contact";
 import KeyStats from "../components/Key_stats";
 import { Separator } from "../components/ui/separator"
 
@@ -38,8 +37,6 @@ export default function Home() {
       <TeamSection />
       <Separator/>
       <CollaborationSection/>
-      <Separator/>
-      <ContactSection/>
       <Separator/>
       <KeyStats/>
       <Separator/>
