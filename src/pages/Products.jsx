@@ -1,59 +1,8 @@
-// --- FILE: src/pages/Products.jsx ---
+// src/pages/Products.jsx
+import { Link } from "react-router-dom"; // or from 'next/link' in Next.js
+import products from "../data/products";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import AppleJuice from "../assets/AppleJuice.jpg";
-import Atta from "../assets/Atta.jpg";
-import Tea from "../assets/DarjlingTea.jpg";
-import Turmeric from "../assets/Turmeric.jpg";
-import Chili from "../assets/Chilli.jpg";
-
-const products = [
-  {
-    name: "Ice Apple Juice",
-    category: "Food Products",
-    price: "₹120",
-    image: AppleJuice,
-    ingredients: "Ice Apple, Lemon, Cane Sugar",
-    benefits: "Hydrating, Rich in nutrients",
-    packaging: "250ml glass bottle",
-  },
-  {
-    name: "Multigrain Atta",
-    category: "Food Products",
-    price: "₹90",
-    image: Atta,
-    ingredients: "Wheat, Jowar, Bajra, Ragi, Barley",
-    benefits: "High in fiber, Good for digestion",
-    packaging: "1kg eco-pack",
-  },
-  {
-    name: "Darjeeling Tea",
-    category: "Tea",
-    price: "₹200",
-    image: Tea,
-    ingredients: "Darjeeling loose-leaf",
-    benefits: "Antioxidant-rich, Refreshing",
-    packaging: "100g pouch",
-  },
-  {
-    name: "Organic Turmeric",
-    category: "Spices",
-    price: "₹60",
-    image: Turmeric,
-    ingredients: "Dried turmeric root",
-    benefits: "Anti-inflammatory, Immunity booster",
-    packaging: "200g packet",
-  },
-  {
-    name: "Chili Powder",
-    category: "Spices",
-    price: "₹50",
-    image: Chili,
-    ingredients: "Sun-dried red chili",
-    benefits: "Spicy, Adds flavor",
-    packaging: "100g packet",
-  },
-];
 
 export default function Products() {
   return (
@@ -67,10 +16,11 @@ export default function Products() {
           Shop our agri-food, wellness, and gardening products online.
         </p>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
-          {products.map((product, i) => (
-            <div
-              key={i}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition p-4  border-green-100"
+          {products.map((product) => (
+            <Link
+              to={`/products/${product.id}`}
+              key={product.id}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition p-4 border-green-100"
             >
               <img
                 src={product.image}
@@ -84,19 +34,13 @@ export default function Products() {
                 <p className="text-sm text-gray-500 dark:text-gray-200 mb-1">{product.category}</p>
                 <p className="text-green-700 dark:text-green-500 font-semibold">{product.price}</p>
                 <p className="text-sm mt-2">
-                  <strong>Ingredients:</strong> {product.ingredients}
-                </p>
-                <p className="text-sm">
-                  <strong>Benefits:</strong> {product.benefits}
-                </p>
-                <p className="text-sm mb-2">
                   <strong>Packaging:</strong> {product.packaging}
                 </p>
                 <button className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
-                  Shop Now
+                  View Details
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

@@ -12,12 +12,15 @@ import CollaboratePage from "./pages/Collaborate";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Plantos from "./pages/Plantos";
+import ProductDetails from "./pages/productDetails";
+
 
 const RoutesConfig = () => (
   <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<ProductDetails />} />
       <Route path="/services" element={<Services />} />
       <Route path="/training" element={<Training />} />
       <Route path="/blog" element={<Blog />} />
