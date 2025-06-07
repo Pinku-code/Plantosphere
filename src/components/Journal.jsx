@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import JournalCover from "../assets/DarjlingTea.jpg";
+import pdf from "../assets/article/NORMALISATION.pdf"
 
 const JournalSection = () => {
   const [showPDF, setShowPDF] = useState(false);
@@ -69,7 +70,7 @@ const JournalSection = () => {
                 </div>
                 <iframe
                   ref={iframeRef}
-                  src="../src/assets/article/NORMALISATION.PDF"
+                  src={pdf}
                   title="Article PDF"
                   className="w-full h-[75vh] border-0 rounded touch-pinch-zoom bg-green-50"
                   allowFullScreen
